@@ -17,11 +17,11 @@ def F_iterative(n):
     if n == 0 or n == 1:
         return 1
     F0, F1 = 1, 1
+    factorial_n = 1
     for i in range(2, n + 1):
+        factorial_n *= i
         sign = (-1 if i % 2 else 1)
-        factorial_i = math.factorial(i)
-        factorial_2i = math.factorial(2 * i)
-        F_next = sign * (F1 / factorial_i - F0 / factorial_2i)
+        F_next = sign * (F1 / factorial_n - F0 / (factorial_n * (2 * i - 1) * (2 * i)))
         F0, F1 = F1, F_next
     return F1
 
