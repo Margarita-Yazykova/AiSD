@@ -18,7 +18,7 @@ def F_iterative(n):
         return 1
     F0, F1 = 1, 1
     for i in range(2, n + 1):
-        sign = -1 if i % 2 else 1
+        sign = (-1 if i % 2 else 1)
         factorial_i = math.factorial(i)
         factorial_2i = math.factorial(2 * i)
         F_next = sign * (F1 / factorial_i - F0 / factorial_2i)
